@@ -34,10 +34,6 @@ chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
     updateTableIndex();
 });
 
-chrome.tabs.onHighlighted.addListener(function(highlightInfo) {
-    updateTableIndex();
-});
-
 chrome.tabs.onDetached.addListener(function(tabId, detachInfo) {
     updateTableIndex();
 });
