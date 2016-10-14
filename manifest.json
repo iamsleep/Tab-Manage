@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tab",
+  "description": "Tab",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions":
+    [
+        "activeTab",
+        "background",
+        "sessions",
+        "tabs", "storage", "signedInDevices", "processes",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    }
+}
