@@ -29,3 +29,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 chrome.tabs.onMoved.addListener(function(tabId, moveInfo) {
     updateTableIndex();
 });
+
+chrome.tabs.onRemoved.addListener(function(tabId, removeInfo) {
+    updateTableIndex();
+});
