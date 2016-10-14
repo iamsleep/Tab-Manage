@@ -41,3 +41,7 @@ chrome.tabs.onDetached.addListener(function(tabId, detachInfo) {
 chrome.tabs.onAttached.addListener(function(tabId, detachInfo) {
     updateTableIndex();
 });
+
+chrome.windows.onFocusChanged.addListener(function(windowId) {
+    updateTableIndex();
+});
