@@ -1,14 +1,23 @@
 {
-  "manifest_version": 2,
+    "manifest_version": 2,
 
-  "name": "Tab",
-  "description": "Tab",
-  "version": "2.0",
+    "name": "Tab",
+    "description": "Tab",
+    "version": "1.0",
 
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
-  "permissions":
+    "__browser_action": {
+      "default_icon": "icon.png"
+    },
+
+    "__content_scripts": [
+        {
+        "matches": ["<all_urls>"],
+		"css": ["box.css"],
+        "js" : ["content.js"]
+    }
+    ],
+
+    "permissions":
     [
         "activeTab",
         "background",
@@ -17,7 +26,12 @@
         "http://*/*",
         "https://*/*"
     ],
+
     "background": {
         "scripts": ["background.js"]
-    }
+    },
+
+    "web_accessible_resources": [
+        "popup.html"
+    ]
 }

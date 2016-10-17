@@ -45,3 +45,12 @@ chrome.tabs.onAttached.addListener(function(tabId, detachInfo) {
 chrome.windows.onFocusChanged.addListener(function(windowId) {
     updateTableIndex();
 });
+
+chrome.tabs.onActivated.addListener(function(activeInfo){
+    updateTableIndex();
+});
+
+chrome.tabs.onCreated.addListener(function( tab) {
+    //stop();
+    //alert(tab.url);
+});
