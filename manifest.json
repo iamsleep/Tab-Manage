@@ -1,19 +1,19 @@
 {
     "manifest_version": 2,
 
-    "name": "Tab",
+    "name": "tab-manage",
     "description": "Tab",
     "version": "1.0",
 
-    "__browser_action": {
-      "default_icon": "icon.png"
+    "browser_action": {
+      "default_icon": "pages/icon.png"
     },
 
-    "__content_scripts": [
+    "content_scripts": [
         {
         "matches": ["<all_urls>"],
-		"css": ["box.css"],
-        "js" : ["content.js"]
+        "css" : ["content_scripts/tab-manage.css"],
+        "js" : ["content_scripts/content.js"]
     }
     ],
 
@@ -28,10 +28,10 @@
     ],
 
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["background_scripts/background.js"]
     },
 
     "web_accessible_resources": [
-        "popup.html"
+        "pages/tab-manage.html"
     ]
 }
