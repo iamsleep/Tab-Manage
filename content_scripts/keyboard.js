@@ -1,11 +1,12 @@
-document.addEventListener("keydown", keyDownTextField, false);
+//document.addEventListener("keydown", keyDownTextField, false);
 
+var map = {};
 
-function keyDownTextField(e) {
-var keyCode = e.keyCode;
-  if(keyCode==13) {
-  alert("You hit the enter key.");
-  } else {
-  alert("Oh no you didn't.");
-  }
+onkeydown = onkeyup = function(e){
+//function keyDownTextField(e){
+    var keyCode = e.key;
+    //alert("You hit the enter key." + keyCode);
+    map[e.key] = e.type == 'keydown';
+    //alert(map);
+    //console.log(map);
 }
