@@ -52,9 +52,12 @@ chrome.tabs.onActivated.addListener(function(activeInfo){
 
 chrome.tabs.onCreated.addListener(function( tab) {
     chrome.tabs.query({active: true}, function (tabs) {
-        var removeHidden = 'var c =parent.document.getElementsByClassName(\'tabManage\'); console.log(c); c[0].setAttribute(\'class\', \'tabManage\')';
-        activeTab = tabs[0];
-        chrome.tabs.executeScript(tabs[0].id,{allFrames: true, code: removeHidden});
-
+        if (chrome.runtime.lastError) {
+            console.log(chrome.runtime.lastError.message);
+        } else {
+            var removeHidden = 'var c =parent.document.getElementsByClassName(\'tabManage\'); console.log(c); c[0].setAttribute(\'class\', \'tabManage\')';
+            activeTab = tabs[0];
+            chrome.tabs.executeScript(tabs[0].id,{allFrames: true, code: removeHidden});
+        }
     });
 });
